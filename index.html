@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="A fun interactive Rock Paper Scissors game.">
+  <title>Rock Paper Scissors</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">ARCADE GAME</p>
+        <h1>Rock Paper Scissors</h1>
+      </div>
+      <button class="icon-btn" id="resetTop" title="Reset game" aria-label="Reset game">↻</button>
+    </header>
+
+    <section class="score-card">
+      <div class="score">
+        <span>You</span>
+        <strong id="playerScore">0</strong>
+      </div>
+      <div class="vs">VS</div>
+      <div class="score">
+        <span>Computer</span>
+        <strong id="computerScore">0</strong>
+      </div>
+    </section>
+
+    <section class="arena">
+      <div class="choice-panel">
+        <span class="label">YOU</span>
+        <div class="choice-display" id="playerChoice">?</div>
+      </div>
+      <div class="result-area">
+        <div class="round" id="roundText">Choose your move</div>
+        <div class="result" id="resultText">Ready?</div>
+        <div class="computer-thinking" id="thinking" aria-live="polite"></div>
+      </div>
+      <div class="choice-panel">
+        <span class="label">COMPUTER</span>
+        <div class="choice-display" id="computerChoice">?</div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <h2>Make your move</h2>
+      <div class="moves">
+        <button class="move-btn" data-move="Rock">
+          <span class="move-icon">🪨</span>
+          <span>Rock</span>
+        </button>
+        <button class="move-btn" data-move="Paper">
+          <span class="move-icon">📄</span>
+          <span>Paper</span>
+        </button>
+        <button class="move-btn" data-move="Scissors">
+          <span class="move-icon">✂️</span>
+          <span>Scissors</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><span>Wins</span><strong id="wins">0</strong></div>
+      <div><span>Losses</span><strong id="losses">0</strong></div>
+      <div><span>Ties</span><strong id="ties">0</strong></div>
+    </section>
+
+    <button class="reset-btn" id="resetGame">Reset Game</button>
+    <p class="status" id="status" aria-live="polite">Pick Rock, Paper or Scissors to start.</p>
+  </main>
+
+  <div class="overlay hidden" id="gameOver">
+    <div class="modal">
+      <div class="trophy">🏆</div>
+      <h2 id="gameOverTitle">Game Over</h2>
+      <p id="gameOverMessage"></p>
+      <button class="primary-btn" id="playAgain">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
